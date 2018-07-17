@@ -1,0 +1,19 @@
+apply plugin: 'com.mob.sdk'
+
+MobSDK {
+    appKey "25cd95bb0fe94"
+
+    ShareSDK {
+        //平台配置信息
+        devInfo {
+            Wechat {
+                appId "wxc722dcdc0d501bc8"
+            }
+
+            WechatMoments {
+                appId "wxc722dcdc0d501bc8"
+            }
+        }
+    }
+
+}

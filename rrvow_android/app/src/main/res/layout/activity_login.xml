@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_login"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/status_bar_height">
+
+    <TextView
+        android:id="@+id/txt_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="返回"
+        android:textColor="@color/white"
+        android:textSize="@dimen/small_font_size" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/ic_login" />
+
+    <com.rrvow.rrchain.common.widget.blurlayout.BlurLayout
+        android:id="@+id/bl_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginTop="75dp"
+        app:blk_cornerRadius="4dp"
+        app:blk_downscaleFactor="0.25"
+        app:blk_fps="0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_btn_selector"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+86"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_font_size" />
+
+                <View
+                    style="@style/Divider.Vertical"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/margin_normal"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:background="@color/white" />
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:hint="请输入手机号"
+                    android:imeActionLabel="下一步"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:paddingRight="@dimen/margin_normal"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/txt_hint_color"
+                    android:textSize="@dimen/normal_font_size" />
+
+            </LinearLayout>
+
+            <View
+                style="@style/Divider"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:background="@color/txt_hint_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_code"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:ellipsize="end"
+                    android:hint="短信验证码"
+                    android:imeActionLabel="登录"
+                    android:imeOptions="actionDone"
+                    android:inputType="phone"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/margin_normal"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/txt_hint_color"
+                    android:textSize="@dimen/normal_font_size" />
+
+                <TextView
+                    android:id="@+id/tv_send_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:enabled="false"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:text="获取验证码"
+                    android:textColor="@drawable/btn_sms_color"
+                    android:textSize="@dimen/small_font_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_invite_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <View
+                    style="@style/Divider"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:background="@color/txt_hint_color" />
+
+                <EditText
+                    android:id="@+id/et_invite_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/transparent"
+                    android:ellipsize="end"
+                    android:hint="邀请码"
+                    android:imeActionLabel="登录"
+                    android:imeOptions="actionDone"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/margin_normal"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/txt_hint_color"
+                    android:textSize="@dimen/normal_font_size" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.rrvow.rrchain.common.widget.blurlayout.BlurLayout>
+
+    <com.rrvow.rrchain.common.widget.ProgressButtonLayout
+        android:id="@+id/pbl_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginTop="70dp"
+        app:background="@drawable/bg_pbl"
+        app:cover="@drawable/ic_pbl_cover">
+
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/Btn.White"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="登录"
+            android:textSize="@dimen/normal_font_size" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:translationZ="1dp" />
+
+    </com.rrvow.rrchain.common.widget.ProgressButtonLayout>
+
+</LinearLayout>

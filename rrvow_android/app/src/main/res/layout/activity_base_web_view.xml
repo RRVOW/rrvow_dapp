@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical"
+    tools:context=".base.activity.CommonWebActivity">
+
+    <include
+        android:id="@+id/action_bar"
+        layout="@layout/common_actionbar" />
+
+    <ProgressBar
+        android:id="@+id/browser_pb"
+        style="@style/ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_weight"
+        android:max="100" />
+
+    <com.rrvow.rrchain.base.view.BaseWebView
+        android:id="@+id/base_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.rrvow.rrchain.base.view.BaseWebView>
+
+</LinearLayout>

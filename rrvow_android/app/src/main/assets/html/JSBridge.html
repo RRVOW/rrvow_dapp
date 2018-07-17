@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #ffffff;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            align-self: center;
+        }
+
+        .button {
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            background-color: #4Caf50;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .button:active {
+            background-color: #3e6f55;
+            outline: none;
+            text-decoration: none;
+            border: none;
+            color: #888888;
+        }
+
+
+
+
+
+    </style>
+    <script>
+
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                alert("back to page");
+            } else {
+                alert("event.persisted is false");
+            }
+        };
+
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+        //获取应用版本号
+        function getAppVersion() {
+            var funStr = "rrvowpay_getAppVersion?callbackFunction=getMobileAppVersion";
+            requestNativeFun(funStr);
+        }
+
+        //获取版本号回调
+        function getMobileAppVersion(retError, errorDesc, versionName) {
+            document.getElementById('verson').innerHTML = "errcode: " + retError + "<br/> errorDesc: " + errorDesc + "<br/> versonName: " + versionName;
+        }
+
+        //设置原生标题
+        function setPageTitle() {
+            var funStr = "rrvowpay_chgPageTitle?title=新的标题";
+            requestNativeFun(funStr);
+        }
+
+        //显示Toast
+        function displayToast() {
+            var funStr = "rrvowpay_popAppHint?msg=网络不给力";
+            requestNativeFun(funStr);
+        }
+
+        //打开新的WEB页面
+        function openNewPage() {
+            var encodeUrl = encodeURI("http://www.baidu.com");
+            var funStr = "rrvowpay_openDetailUrl?encodeUrl=" + encodeUrl + "&pageTitle=百度"+"&isFrom=2";
+            requestNativeFun(funStr);
+        }
+
+        //打开新的广告页面
+        function openAdPage() {
+            //var funStr = "rrvowpay_openPage?pageName=" + "com.rrvow.panda.module.store.StoreMainActivity";
+            //requestNativeFun(funStr);
+            var encodeUrl = encodeURI("http://www.baidu.com");
+            var funStr = "rrvowpay_openDetailUrl?encodeUrl=" + encodeUrl + "&pageTitle=百度"+"&isFrom=1";
+            requestNativeFun(funStr);
+            closePage();
+        }
+
+        //关闭当前页面
+        function closePage() {
+            var funStr = "rrvowpay_closePage";
+            requestNativeFun(funStr);
+        }
+
+        //通过系统浏览器打开页面
+        function openPageByBorwser() {
+            var encodeUrl = encodeURI("http://www.baidu.com");
+            var funStr = "rrvowpay_openUrlByOsBrowser?encodeUrl=" + encodeUrl;
+            requestNativeFun(funStr);
+        }
+
+        //获取设备信息
+        function getDeviceInfo() {
+            var funStr = "rrvowpay_getMobileDeviceInfo?callbackFunction=getMobileDeviceInfo";
+            requestNativeFun(funStr);
+        }
+
+        function getMobileDeviceInfo(deviceStr) {
+            document.getElementById('verson').innerHTML = deviceStr;
+        }
+
+        //打开原生界面
+        function openNativePage() {
+            var pageName;
+            if (isAndroid) {
+                pageName = "com.rrvow.panda.module.common.user.activity.FeedbackActivity";
+            } else if (isiOS) {
+                pageName = "DWFeedbackViewController";
+            }
+            var funStr = "rrvowpay_openPage?pageName=" + pageName;
+            requestNativeFun(funStr);
+        }
+
+        //获得UserID
+        function getUserID() {
+            var funStr = "rrvowpay_getUserId?callbackFunction=getUserId";
+            requestNativeFun(funStr);
+        }
+
+        //获取登录角色
+        function getLoginRole() {
+            var funStr = "rrvowpay_getRole?callbackFunction=getRole";
+            requestNativeFun(funStr);
+        }
+
+        function getUserId(retError, errorDesc, userId) {
+            document.getElementById('userid').innerHTML = "UserID: " + userId
+        }
+
+        function getRole(retError, errorDesc, role) {
+            document.getElementById('role').innerHTML = "登录角色: " + role;
+        }
+
+        function getInfo() {
+            getAppVersion();
+            getUserID();
+            getLoginRole();
+        }
+
+        function requestNativeFun(protocolStr) {
+            if (isAndroid) {
+                WebviewContainer.callAppFunc(protocolStr);
+            } else if (isiOS) {
+                var url = "objc://" + protocolStr;
+                loadURL(url);
+            }
+        }
+
+        function loadURL(url) {
+            var iFrame;
+            iFrame = document.createElement("iframe");
+            iFrame.setAttribute("src", url);
+            iFrame.setAttribute("style", "display:none;");
+            iFrame.setAttribute("height", "0px");
+            iFrame.setAttribute("width", "0px");
+            iFrame.setAttribute("frameborder", "0");
+            document.body.appendChild(iFrame);
+            iFrame.parentNode.removeChild(iFrame);
+            iFrame = null;
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+<!--<button class="button" style="vertical-align: middle">-->
+<!--<span>Hover </span>-->
+<!--</button>-->
+
+<button class="button" onclick="getAppVersion()">获取应用版本号</button>
+<button class="button" onclick="setPageTitle()">设置新的标题</button>
+<button class="button" onclick="displayToast()">显示Toast</button>
+<button class="button" onclick="openNewPage()">打开新的页面</button>
+<button class="button" onclick="openAdPage()">打开新的广告页面</button>
+<button class="button" onclick="closePage()">关闭当前页面</button>
+<button class="button" onclick="openPageByBorwser()">用系统浏览器打开页面</button>
+<button class="button" onclick="getDeviceInfo()">获取设备信息</button>
+<button class="button" onclick="openNativePage()">打开原生页面</button>
+<button class="button" onclick="getUserID()">获取userID</button>
+<button class="button" onclick="getLoginRole()">获取登录角色</button>
+<button class="button" onclick="getInfo()">并发测试</button>
+<a href="http://t.shop.pay.xiongmaoworld.com/demo">跳转至其他页面</a>
+<br>
+<a href="tel:400-888-6633">打电话打电话</a>
+<br>
+<br>
+<a href="sms:18621703653">发送短信</a>
+<br>
+<br>
+<a href="mailto:mail@mail.com">发送邮件</a>
+<br/>
+<br/>
+<a id="verson">应用版本号:</a>
+<br/>
+<br/>
+<a id="userid">userID:</a>
+<br/>
+<br/>
+<a id="role">登录角色:</a>
+</body>
+</html>

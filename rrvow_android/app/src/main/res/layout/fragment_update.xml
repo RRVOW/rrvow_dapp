@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_white_round"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_update" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/big_font_size"
+        android:text="发现新版本"
+        android:textColor="@color/light_black"
+        android:textSize="@dimen/normal_font_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:lineSpacingExtra="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="@color/light_black"
+        android:textSize="@dimen/small_font_size" />
+
+    <View
+        android:id="@+id/iv_divider"
+        style="@style/Divider"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content" />
+
+    <TextView
+        android:id="@+id/tv_get_it"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_item_selector"
+        android:gravity="center"
+        android:padding="@dimen/margin_normal"
+        android:text="立即更新"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/small_font_size" />
+</LinearLayout>

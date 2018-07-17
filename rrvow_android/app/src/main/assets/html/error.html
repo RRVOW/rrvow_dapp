@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>无法显示</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<style>
+*{padding: 0;margin:0;background-color:#eeeeee}
+body{font-size:12px;color: #353535;padding: 80px 36px;line-height: 1.8;font-family: "microsoft yahei"}
+.error_wrap{background: url(./error.png) no-repeat center bottom;height: 420px;background-size: 200px auto;}
+.error_box{position: relative;}
+.error_main{background-color: #e5e5e5;padding: 30px 20px 50px;color: #575757;font-size: 15px;}
+.error_main h3{color: #3699dc;font-size: 18px;margin-bottom: 15px;font-weight: normal;background-color: #e5e5e5;}
+.error_main h4{font-weight: normal;background-color: #e5e5e5;}
+.error_main p{font-weight: normal;background-color: #e5e5e5;}
+.arrow{
+    background: url(./arrow.png) no-repeat;
+    background-size: 57px auto;
+    width: 52px;
+    height: 26px;
+    display: block;
+    position: absolute;
+    bottom: -24px;
+    right: 28px;
+}
+.circle{background-color: #919191;width: 4px;height: 4px;-webkit-border-radius: 2px;-moz-border-radius: 2px;-o-border-radius: 2px;border-radius: 2px;display: inline-block;margin: 0 6px;vertical-align: middle;}
+</style>
+</head>
+<body>
+<div class="wraper">
+    <div class="error_wrap">
+        <div class="error_box">
+            <div class="error_main">
+                <h3 class="title">对不起，页面无法显示 。</h3>
+                <h4>建议您：</h4>
+                <p>
+                    <span class="circle"></span>检查网络连接<br>
+                    <span class="circle"></span>稍后重试
+                </p>
+            </div>
+            <span class="arrow"></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

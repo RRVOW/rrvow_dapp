@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_actionbar" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@mipmap/bg_task"
+            android:scaleType="centerCrop"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin_normal"
+            android:paddingTop="@dimen/margin_normal"
+            android:paddingRight="@dimen/margin_normal"
+            android:paddingBottom="9dp">
+
+            <TextView
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="代理商交易任务奖励"
+                android:textColor="@color/white"
+                android:textSize="24dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:layout_marginTop="35dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@mipmap/task_rc_bg"
+                android:gravity="center_horizontal"
+                android:paddingBottom="20dp">
+
+
+                <LinearLayout
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:orientation="horizontal"
+                    android:gravity="bottom">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/yellow"
+                        android:textSize="18dp"
+                        android:text="销售额:"/>
+
+                    <TextView
+                        android:id="@+id/tv_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/yellow"
+                        android:textSize="30dp"
+                        android:text="¥0.00"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_txt"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/middle_gray"
+                        android:textSize="12dp"
+                        android:text="销售额还差" />
+
+                    <TextView
+                        android:id="@+id/tv_diff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/yellow"
+                        android:textSize="12dp"
+                        android:text="2020" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/middle_gray"
+                        android:textSize="12dp"
+                        android:text="即可获得" />
+
+                    <TextView
+                        android:id="@+id/tv_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/yellow"
+                        android:textSize="12dp"
+                        android:text="20%" />
+
+                    <TextView
+                        android:id="@+id/txt_version"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/middle_gray"
+                        android:textSize="12dp"
+                        android:text="的额外水晶奖励" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_marginTop="32dp"
+                    android:layout_width="@dimen/progressbar_w"
+                    android:layout_height="8dp">
+
+                    <ProgressBar
+                        android:id="@+id/pb"
+                        android:layout_width="@dimen/progressbar_w"
+                        android:layout_height="8dp"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:progressDrawable="@drawable/progressbar_bg"
+                        android:progress="0"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="8dp"
+                        android:background="@color/white"
+                        android:layout_marginLeft="90dp"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="8dp"
+                        android:background="@color/white"
+                        android:layout_marginLeft="180dp"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="8dp"
+                        android:background="@color/white"
+                        android:layout_marginLeft="270dp"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="@dimen/progressbar_w"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¥0"
+                        android:textSize="14dp"
+                        android:textColor="#4e4e4e"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="55dp"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="¥1000"
+                            android:textSize="14dp"
+                            android:textColor="#4e4e4e"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+50%"
+                            android:textSize="12dp"
+                            android:textColor="#bbbbbb"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="额外水晶"
+                            android:textSize="12dp"
+                            android:textColor="#bbbbbb"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="40dp"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="¥5000"
+                            android:textSize="14dp"
+                            android:textColor="#4e4e4e"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+20%"
+                            android:textSize="12dp"
+                            android:textColor="#bbbbbb"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="额外水晶"
+                            android:textSize="12dp"
+                            android:textColor="#bbbbbb"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="40dp"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="¥10000"
+                            android:textSize="14dp"
+                            android:textColor="#4e4e4e"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+10%"
+                            android:textSize="12dp"
+                            android:textColor="#bbbbbb"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="额外水晶"
+                            android:textSize="12dp"
+                            android:textColor="#bbbbbb"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="26dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_update_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/yellow"
+                        android:text=""
+                        android:textSize="14dp"/>
+
+                    <RelativeLayout
+                        android:id="@+id/btn_refresh"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true">
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="26dp"
+                            android:background="@drawable/bg_round_yellow"
+                            android:orientation="horizontal"
+                            android:layout_centerInParent="true">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textColor="@color/white"
+                                android:text="刷新"
+                                android:textSize="16dp"
+                                android:gravity="center"
+                                android:layout_weight="1"/>
+
+                            <ProgressBar
+                                android:id="@+id/loading"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="5dp"
+                                android:indeterminateDrawable="@drawable/progressbar"
+                                android:visibility="gone"/>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="@dimen/margin_normal"
+                android:background="@mipmap/task_rc_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="规则"
+                    android:textColor="@color/light_black"/>
+
+                <TextView
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:text="@string/rule"
+                    android:textColor="@color/middle_gray"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

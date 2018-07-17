@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color">
+
+    <LinearLayout
+        android:id="@+id/tabbar_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shop_imgview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_ore_unselected" />
+
+        <ImageView
+            android:id="@+id/order_imgview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_bottom_social" />
+
+        <ImageView
+            android:id="@+id/msg_imgview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_wallet_unselect" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/shop_selected_imgview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:alpha="1"
+            android:background="@android:color/white"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_ore_selected" />
+
+        <ImageView
+            android:id="@+id/order_selected_imgview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:alpha="0"
+            android:background="@android:color/white"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_social_pressed" />
+
+
+        <ImageView
+            android:id="@+id/msg_selected_imgview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:alpha="0"
+            android:background="@android:color/white"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_wallet_selected" />
+
+    </LinearLayout>
+
+    <com.rrvow.rrchain.common.widget.NoScrollViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/divider" />
+
+    <View
+        android:id="@+id/divider"
+        style="@style/Divider"
+        android:layout_above="@+id/tabbar_linearlayout" />
+</RelativeLayout>

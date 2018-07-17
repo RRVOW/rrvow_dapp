@@ -1,0 +1,17 @@
+*.iml
+.gradle
+/local.properties
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+materialDialog/build
+okhttputils/.idea
+okhttputils/build
+okhttputils/okhttputils.iml
+okhttputils/local.properties
+okhttputils/gradle
+.idea

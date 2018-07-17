@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.scwang.smartrefresh.layout.header.ClassicsHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srlAccentColor="@color/white"
+        app:srlDrawableSize="@dimen/small_font_size"
+        app:srlPrimaryColor="@color/index_refrsh_color"
+        app:srlTextSizeTitle="@dimen/small_font_size" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="636dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/bg_index" />
+
+            <RelativeLayout
+                android:id="@+id/rl_crystal"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:paddingTop="@dimen/status_bar_height">
+
+                <ImageView
+                    android:id="@+id/img_crystal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/txt_crystal_label"
+                    android:layout_marginLeft="@dimen/margin_normal"
+                    android:layout_marginTop="5dp"
+                    android:src="@mipmap/ic_crystal_num" />
+
+
+                <ViewFlipper
+                    android:id="@+id/vf_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/viewflipper_height"
+                    android:background="#0C000000"
+                    android:flipInterval="4000"
+                    android:inAnimation="@anim/anim_in_vf"
+                    android:outAnimation="@anim/anim_out_vf" />
+
+                <TextView
+                    android:id="@+id/txt_crystal_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginTop="50dp"
+                    android:layout_toRightOf="@+id/img_crystal"
+                    android:text="水    晶"
+                    android:textColor="@color/crystal_font_color"
+                    android:textSize="@dimen/small_font_size" />
+
+                <TextView
+                    android:id="@+id/txt_crystal_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/txt_crystal_label"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/txt_crystal_label"
+                    android:text="--"
+                    android:textColor="@color/crystal_font_color"
+                    android:textSize="@dimen/small_font_size" />
+
+
+                <ImageView
+                    android:id="@+id/img_contribution"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/txt_contribution_label"
+                    android:layout_marginLeft="@dimen/margin_normal"
+                    android:layout_marginTop="5dp"
+                    android:src="@mipmap/ic_contribution_num" />
+
+                <TextView
+                    android:id="@+id/txt_contribution_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/txt_crystal_label"
+                    android:layout_below="@+id/txt_crystal_label"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="贡献力"
+                    android:textColor="@color/crystal_font_color"
+                    android:textSize="@dimen/small_font_size" />
+
+                <TextView
+                    android:id="@+id/txt_contribution_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/txt_contribution_label"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/txt_contribution_label"
+                    android:text="--"
+                    android:textColor="@color/crystal_font_color"
+                    android:textSize="@dimen/small_font_size" />
+
+                <TextView
+                    android:id="@+id/txt_crystal_sta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/txt_crystal_label"
+                    android:layout_marginRight="@dimen/margin_normal"
+                    android:layout_marginTop="-5dp"
+                    android:background="@drawable/bg_crystal_btn"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="2dp"
+                    android:text="水晶攻略"
+                    android:textColor="#8894e0"
+                    android:textSize="@dimen/small_font_size"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/img_big_crystal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/txt_big_crystal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="-25dp"
+                    android:src="@mipmap/ic_big_crystal" />
+
+                <ImageView
+                    android:id="@+id/img_crystal1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/img_big_crystal"
+                    android:layout_marginBottom="-24dp"
+                    android:layout_marginRight="-60dp"
+                    android:layout_toLeftOf="@+id/img_big_crystal"
+                    android:src="@mipmap/crystal1"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/txt_crystal1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/img_crystal1"
+                    android:layout_alignRight="@id/img_crystal1"
+                    android:layout_below="@id/img_crystal1"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/crystal_label_color"
+                    android:textSize="@dimen/super_small_font_size"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/img_crystal2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/img_big_crystal"
+                    android:layout_marginBottom="-40dp"
+                    android:layout_marginLeft="-40dp"
+                    android:layout_toRightOf="@+id/img_big_crystal"
+                    android:src="@mipmap/crystal2"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/txt_crystal2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/img_crystal2"
+                    android:layout_alignRight="@id/img_crystal2"
+                    android:layout_below="@id/img_crystal2"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:textColor="@color/crystal_label_color"
+                    android:textSize="@dimen/super_small_font_size"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/img_crystal3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_crystal1"
+                    android:layout_marginTop="20dp"
+                    android:layout_toLeftOf="@+id/img_big_crystal"
+                    android:src="@mipmap/crystal3"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/txt_crystal3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/img_crystal3"
+                    android:layout_alignRight="@id/img_crystal3"
+                    android:layout_below="@id/img_crystal3"
+                    android:layout_marginTop="-20dp"
+                    android:gravity="center"
+                    android:textColor="@color/crystal_label_color"
+                    android:textSize="@dimen/super_small_font_size"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/img_crystal4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img_crystal2"
+                    android:layout_marginLeft="-20dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_toRightOf="@+id/img_big_crystal"
+                    android:src="@mipmap/crystal4"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/txt_crystal4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/img_crystal4"
+                    android:layout_alignRight="@id/img_crystal4"
+                    android:layout_below="@id/img_crystal4"
+                    android:layout_marginTop="-20dp"
+                    android:gravity="center"
+                    android:textColor="@color/crystal_label_color"
+                    android:textSize="@dimen/super_small_font_size"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/img_crystal5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_crystal3"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toLeftOf="@id/img_big_crystal"
+                    android:src="@mipmap/crystal5"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/txt_crystal5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/img_crystal5"
+                    android:layout_alignRight="@id/img_crystal5"
+                    android:layout_below="@id/img_crystal5"
+                    android:layout_marginTop="-10dp"
+                    android:gravity="center"
+                    android:textColor="#a0ff90"
+                    android:textSize="@dimen/super_small_font_size"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/img_crystal6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_crystal4"
+                    android:layout_toRightOf="@id/img_big_crystal"
+                    android:src="@mipmap/crystal6"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/txt_crystal6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/img_crystal6"
+                    android:layout_alignRight="@id/img_crystal6"
+                    android:layout_below="@id/img_crystal6"
+                    android:layout_marginTop="-20dp"
+                    android:gravity="center"
+                    android:textColor="@color/crystal_label_color"
+                    android:textSize="@dimen/super_small_font_size"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/txt_big_crystal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/txt_time"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="100dp"
+                    android:text="水晶生成中"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small_font_size" />
+
+                <ImageView
+                    android:layout_width="3dp"
+                    android:layout_height="3dp"
+                    android:layout_alignBottom="@+id/txt_time"
+                    android:layout_toLeftOf="@id/txt_time"
+                    android:src="@mipmap/ic_corner"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txt_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:background="@drawable/rbg_white"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="@dimen/margin_normal"
+                    android:paddingRight="@dimen/margin_normal"
+                    android:paddingTop="5dp"
+                    android:text="更新于 ----.--.--:-- 点"
+                    android:textColor="@color/light_gray"
+                    android:textSize="@dimen/super_small_font_size"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txt_ranking_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:background="@drawable/bg_transparent"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="@dimen/margin_small"
+                    android:paddingRight="@dimen/margin_small"
+                    android:paddingTop="2dp"
+                    android:text="虚拟市值排行"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/super_small_font_size"
+                    android:visibility="gone" />
+
+                <TextView
+
+                    android:id="@+id/txt_invite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:background="@drawable/bg_transparent"
+                    android:drawableLeft="@mipmap/img_invite"
+                    android:drawablePadding="5dp"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="@dimen/margin_small"
+                    android:paddingRight="@dimen/margin_small"
+                    android:paddingTop="2dp"
+                    android:text="邀请好友"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/super_small_font_size" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/ll_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_crystal"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/bg_index_color" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:layout_marginRight="@dimen/margin_small"
+                    android:background="@drawable/rbg_top_white"
+                    android:orientation="vertical">
+
+                    <com.rrvow.rrchain.common.widget.PagerSlidingTabStrip
+                        android:id="@+id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="@color/white"
+                        app:pstsIndicatorColor="@color/black"
+                        app:pstsIndicatorHeight="3dp"
+                        app:pstsShouldExpand="true" />
+
+                    <com.rrvow.rrchain.common.widget.WrapperViewPager
+                        android:id="@+id/view_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="300dp"
+                        android:nestedScrollingEnabled="false" />
+                </LinearLayout>
+            </FrameLayout>
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>
